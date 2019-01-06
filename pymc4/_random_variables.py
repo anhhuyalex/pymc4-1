@@ -3,7 +3,7 @@ from . import _template_contexts as contexts
 import tensorflow as tf
 import tensorflow_probability as tfp
 
-__all__ = ["Normal", "HalfNormal", "Multinomial", "Dirichlet"]
+__all__ = ["Normal", "HalfNormal", "Multinomial", "Dirichlet", "HalfCauchy"]
 
 
 class WithBackendArithmetic:
@@ -147,3 +147,7 @@ class Multinomial(RandomVariable):
 
 class Dirichlet(RandomVariable):
     _base_dist = tfp.distributions.Dirichlet
+
+
+class HalfCauchy(RandomVariable):
+    _base_dist = tfp.distributions.HalfCauchy
